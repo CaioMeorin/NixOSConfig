@@ -8,6 +8,9 @@
 
   # Packages that should be installed to the user profile.
   home.packages = [
+    pkgs.gnome.gnome-initial-setup
+    pkgs.gnome.gnome-tweaks
+    pkgs.discord
     pkgs.zsh
     pkgs.vim
     pkgs.oh-my-zsh
@@ -28,6 +31,7 @@
     pkgs.python312
     pkgs.tmux
     pkgs.kitty
+    pkgs.unzip
     pkgs.ripgrep
     pkgs.fzf
   ];
@@ -44,7 +48,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: [
@@ -59,8 +62,8 @@
   };
   programs.git = {
     enable = true;
-    userName = "Jane Doe";
-    userEmail = "jane.doe@example.org";
+    userName = "cmeorin";
+    userEmail = "caiomeorin.dev@gmail.com";
   };
   services.gpg-agent = {
     enable = true;

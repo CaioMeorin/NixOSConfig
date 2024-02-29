@@ -10,6 +10,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       <home-manager/nixos>
+      ./gnome.nix
     ];
 
   # Bootloader.
@@ -90,11 +91,13 @@
       #  thunderbird
     ];
   };
+  users.users.cmeorin.shell = pkgs.zsh;
   programs.zsh.enable = true;
   home-manager.users.cmeorin = import ./home.nix;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
